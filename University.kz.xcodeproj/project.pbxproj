@@ -11,6 +11,14 @@
 		3F2B86A51D1BC32A007AFFF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2B86A31D1BC32A007AFFF3 /* Main.storyboard */; };
 		3F2B86A71D1BC32A007AFFF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F2B86A61D1BC32A007AFFF3 /* Assets.xcassets */; };
 		3F2B86AA1D1BC32A007AFFF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2B86A81D1BC32A007AFFF3 /* LaunchScreen.storyboard */; };
+		3F50A0B21D1BD83200D116FA /* UniversityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F50A0B11D1BD83200D116FA /* UniversityDetailsViewController.swift */; };
+		3F50A0B41D1BD87000D116FA /* SpecialitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F50A0B31D1BD87000D116FA /* SpecialitiesTableViewController.swift */; };
+		3F50A0B61D1BD89800D116FA /* SpecialityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F50A0B51D1BD89800D116FA /* SpecialityDetailsViewController.swift */; };
+		3F50A0B81D1BD90F00D116FA /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F50A0B71D1BD90F00D116FA /* City.swift */; };
+		3F50A0BA1D1BD95100D116FA /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F50A0B91D1BD95100D116FA /* University.swift */; };
+		3F50A0BC1D1BDA8C00D116FA /* Speciality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F50A0BB1D1BDA8C00D116FA /* Speciality.swift */; };
+		3F852F341D1BCF0E007F19E4 /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F852F331D1BCF0E007F19E4 /* CitiesTableViewController.swift */; };
+		3F852F361D1BCF1F007F19E4 /* UniversitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F852F351D1BCF1F007F19E4 /* UniversitiesTableViewController.swift */; };
 		4DDBDFCC79BD18925D532DE4 /* Pods_University_kz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA788B2F71C1AA1533D6AF6A /* Pods_University_kz.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +29,14 @@
 		3F2B86A61D1BC32A007AFFF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F2B86A91D1BC32A007AFFF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F2B86AB1D1BC32A007AFFF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F50A0B11D1BD83200D116FA /* UniversityDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityDetailsViewController.swift; sourceTree = "<group>"; };
+		3F50A0B31D1BD87000D116FA /* SpecialitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialitiesTableViewController.swift; sourceTree = "<group>"; };
+		3F50A0B51D1BD89800D116FA /* SpecialityDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialityDetailsViewController.swift; sourceTree = "<group>"; };
+		3F50A0B71D1BD90F00D116FA /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		3F50A0B91D1BD95100D116FA /* University.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
+		3F50A0BB1D1BDA8C00D116FA /* Speciality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speciality.swift; sourceTree = "<group>"; };
+		3F852F331D1BCF0E007F19E4 /* CitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesTableViewController.swift; sourceTree = "<group>"; };
+		3F852F351D1BCF1F007F19E4 /* UniversitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesTableViewController.swift; sourceTree = "<group>"; };
 		67837FE6B141A35A8DBF7E42 /* Pods-University.kz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-University.kz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-University.kz/Pods-University.kz.debug.xcconfig"; sourceTree = "<group>"; };
 		BA788B2F71C1AA1533D6AF6A /* Pods_University_kz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_University_kz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0222A772994ECC64C88A95 /* Pods-University.kz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-University.kz.release.xcconfig"; path = "Pods/Target Support Files/Pods-University.kz/Pods-University.kz.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,13 +83,53 @@
 		3F2B869E1D1BC32A007AFFF3 /* University.kz */ = {
 			isa = PBXGroup;
 			children = (
-				3F2B869F1D1BC32A007AFFF3 /* AppDelegate.swift */,
+				3F852F2E1D1BC784007F19E4 /* ViewController */,
+				3F852F2D1D1BC77E007F19E4 /* Model */,
+				3F852F2C1D1BC770007F19E4 /* View */,
+				3F852F2B1D1BC767007F19E4 /* Supporting Files */,
 				3F2B86A31D1BC32A007AFFF3 /* Main.storyboard */,
+			);
+			path = University.kz;
+			sourceTree = "<group>";
+		};
+		3F852F2B1D1BC767007F19E4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F2B869F1D1BC32A007AFFF3 /* AppDelegate.swift */,
 				3F2B86A61D1BC32A007AFFF3 /* Assets.xcassets */,
 				3F2B86A81D1BC32A007AFFF3 /* LaunchScreen.storyboard */,
 				3F2B86AB1D1BC32A007AFFF3 /* Info.plist */,
 			);
-			path = University.kz;
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F852F2C1D1BC770007F19E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3F852F2D1D1BC77E007F19E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F50A0B71D1BD90F00D116FA /* City.swift */,
+				3F50A0B91D1BD95100D116FA /* University.swift */,
+				3F50A0BB1D1BDA8C00D116FA /* Speciality.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3F852F2E1D1BC784007F19E4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3F852F331D1BCF0E007F19E4 /* CitiesTableViewController.swift */,
+				3F852F351D1BCF1F007F19E4 /* UniversitiesTableViewController.swift */,
+				3F50A0B11D1BD83200D116FA /* UniversityDetailsViewController.swift */,
+				3F50A0B31D1BD87000D116FA /* SpecialitiesTableViewController.swift */,
+				3F50A0B51D1BD89800D116FA /* SpecialityDetailsViewController.swift */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 		7383460F6FA3258F936400A3 /* Pods */ = {
@@ -207,7 +263,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F50A0B21D1BD83200D116FA /* UniversityDetailsViewController.swift in Sources */,
+				3F50A0B41D1BD87000D116FA /* SpecialitiesTableViewController.swift in Sources */,
+				3F852F341D1BCF0E007F19E4 /* CitiesTableViewController.swift in Sources */,
 				3F2B86A01D1BC32A007AFFF3 /* AppDelegate.swift in Sources */,
+				3F50A0B61D1BD89800D116FA /* SpecialityDetailsViewController.swift in Sources */,
+				3F50A0BA1D1BD95100D116FA /* University.swift in Sources */,
+				3F50A0BC1D1BDA8C00D116FA /* Speciality.swift in Sources */,
+				3F852F361D1BCF1F007F19E4 /* UniversitiesTableViewController.swift in Sources */,
+				3F50A0B81D1BD90F00D116FA /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

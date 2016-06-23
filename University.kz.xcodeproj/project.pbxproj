@@ -11,6 +11,7 @@
 		3F2B86A51D1BC32A007AFFF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2B86A31D1BC32A007AFFF3 /* Main.storyboard */; };
 		3F2B86A71D1BC32A007AFFF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F2B86A61D1BC32A007AFFF3 /* Assets.xcassets */; };
 		3F2B86AA1D1BC32A007AFFF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2B86A81D1BC32A007AFFF3 /* LaunchScreen.storyboard */; };
+		4DDBDFCC79BD18925D532DE4 /* Pods_University_kz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA788B2F71C1AA1533D6AF6A /* Pods_University_kz.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,9 @@
 		3F2B86A61D1BC32A007AFFF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F2B86A91D1BC32A007AFFF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F2B86AB1D1BC32A007AFFF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67837FE6B141A35A8DBF7E42 /* Pods-University.kz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-University.kz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-University.kz/Pods-University.kz.debug.xcconfig"; sourceTree = "<group>"; };
+		BA788B2F71C1AA1533D6AF6A /* Pods_University_kz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_University_kz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF0222A772994ECC64C88A95 /* Pods-University.kz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-University.kz.release.xcconfig"; path = "Pods/Target Support Files/Pods-University.kz/Pods-University.kz.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +31,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DDBDFCC79BD18925D532DE4 /* Pods_University_kz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		022F0AB6CA558A3F0F8E59A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA788B2F71C1AA1533D6AF6A /* Pods_University_kz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3F2B86931D1BC32A007AFFF3 = {
 			isa = PBXGroup;
 			children = (
 				3F2B869E1D1BC32A007AFFF3 /* University.kz */,
 				3F2B869D1D1BC32A007AFFF3 /* Products */,
+				7383460F6FA3258F936400A3 /* Pods */,
+				022F0AB6CA558A3F0F8E59A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +76,15 @@
 			path = University.kz;
 			sourceTree = "<group>";
 		};
+		7383460F6FA3258F936400A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				67837FE6B141A35A8DBF7E42 /* Pods-University.kz.debug.xcconfig */,
+				EF0222A772994ECC64C88A95 /* Pods-University.kz.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -68,9 +92,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F2B86AE1D1BC32A007AFFF3 /* Build configuration list for PBXNativeTarget "University.kz" */;
 			buildPhases = (
+				D827211B1EE3B423BE506358 /* [CP] Check Pods Manifest.lock */,
 				3F2B86981D1BC32A007AFFF3 /* Sources */,
 				3F2B86991D1BC32A007AFFF3 /* Frameworks */,
 				3F2B869A1D1BC32A007AFFF3 /* Resources */,
+				B72EEC39F86367DE2FE5EDC7 /* [CP] Embed Pods Frameworks */,
+				B8C651A79253D44DA06B447B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,6 +153,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B72EEC39F86367DE2FE5EDC7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-University.kz/Pods-University.kz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8C651A79253D44DA06B447B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-University.kz/Pods-University.kz-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D827211B1EE3B423BE506358 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3F2B86981D1BC32A007AFFF3 /* Sources */ = {
@@ -245,6 +320,7 @@
 		};
 		3F2B86AF1D1BC32A007AFFF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67837FE6B141A35A8DBF7E42 /* Pods-University.kz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = University.kz/Info.plist;
@@ -256,6 +332,7 @@
 		};
 		3F2B86B01D1BC32A007AFFF3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF0222A772994ECC64C88A95 /* Pods-University.kz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = University.kz/Info.plist;
@@ -284,6 +361,7 @@
 				3F2B86B01D1BC32A007AFFF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,6 +10,7 @@ import UIKit
 
 class SpecialitiesTableViewController: UITableViewController {
 
+    let cellIdentifier : String = "SpecialityCell"
     override func viewDidLoad() {
         super.viewDidLoad()
 

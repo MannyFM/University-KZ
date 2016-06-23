@@ -11,6 +11,9 @@ import KFSwiftImageLoader
 
 class CitiesTableViewController: UITableViewController {
 
+    let cellIdentifier : String = "CityCell"
+    
+    
     var cities = [City]()
     
     override func viewDidLoad() {
@@ -33,7 +36,7 @@ class CitiesTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! CityTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CityTableViewCell
 
         let index = indexPath.row
         

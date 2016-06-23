@@ -11,6 +11,8 @@ import UIKit
 class UniversitiesTableViewController: UITableViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
+
+    let cellIdentifier : String = "UniversityCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()

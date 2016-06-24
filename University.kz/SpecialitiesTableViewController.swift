@@ -56,14 +56,6 @@ class SpecialitiesTableViewController: UITableViewController {
     
     
     // MARK: - Navigation
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == segueIdentifier) {
-            let vc = segue.destinationViewController as! SpecialityDetailsViewController
-            let index = (sender as! NSIndexPath).row
-            vc.speciality = specialities[index]
-        }
-    }
     
     func getSpecialitiesInAsync(university : University) {
         let whereClause = "university.shortname = \'\(university.shortName!)\'"

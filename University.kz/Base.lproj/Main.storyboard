@@ -293,66 +293,10 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Specialities" id="vXO-69-zXh"/>
                     <navigationItem key="navigationItem" id="uY5-Gm-rwj"/>
-                    <connections>
-                        <segue destination="ZSo-6i-nIf" kind="show" identifier="DetailsSegue" id="VoM-GJ-HsG"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxW-2D-aI8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4831.5" y="706"/>
-        </scene>
-        <!--Specialty Details-->
-        <scene sceneID="d3Z-Lz-8m2">
-            <objects>
-                <viewController title="Specialty Details" id="ZSo-6i-nIf" customClass="SpecialityDetailsViewController" customModule="University_kz" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="auM-Uw-fah"/>
-                        <viewControllerLayoutGuide type="bottom" id="hYI-kb-b6X"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Fkp-J4-epq">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v9i-lK-kD6">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <rect key="frame" x="20" y="72" width="360" height="479"/>
-                                </variation>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="v9i-lK-kD6"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="v9i-lK-kD6"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" id="8BS-me-Lcv"/>
-                    <connections>
-                        <outlet property="description" destination="v9i-lK-kD6" id="jry-UG-DJL"/>
-                        <outlet property="descriptionTextView" destination="v9i-lK-kD6" id="ih1-KN-2FE"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BKt-76-hui" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5662.5" y="706"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ozp-db-eko">

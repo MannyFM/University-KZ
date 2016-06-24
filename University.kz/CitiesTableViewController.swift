@@ -21,9 +21,9 @@ class CitiesTableViewController: UITableViewController {
         super.viewDidLoad()
         
         
-        refreshControl = UIRefreshControl()
-        refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl!.addTarget(self, action: #selector(CitiesTableViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+//        refreshControl = UIRefreshControl()
+//        refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
+//        refreshControl!.addTarget(self, action: #selector(CitiesTableViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         self.getAllCitiesAsync()
     }
 
@@ -49,16 +49,13 @@ class CitiesTableViewController: UITableViewController {
 
         let index = indexPath.row
         
-        cell.imageView!.contentMode = .ScaleAspectFit
         if let url = cities[index].imageURL {
-            cell.imageView!.loadImageFromURLString(url, placeholderImage: UIImage(named: "placeholder_city"), completion: nil)
+            cell.cityImageView.loadImageFromURLString(url, placeholderImage: UIImage(named: "placeholder_city"), completion: nil)
         } else {
-            cell.imageView!.image = UIImage(named: "placeholder_city")
+            cell.cityImageView.image = UIImage(named: "placeholder_city")
         }
         
         cell.cityNameLabel.text = cities[index].name
-        cell.cityNameLabel.hidden = false
-        
         return cell
     }
     
@@ -92,7 +89,7 @@ class CitiesTableViewController: UITableViewController {
                 }
                 print("cities downloaded")
                 self.tableView.reloadData()
-                self.refreshControl!.endRefreshing()
+//                self.refreshControl!.endRefreshing()
             },
             error: { (fault: Fault!) -> Void in
                 print("Server reported an error: \(fault)")

@@ -11,7 +11,6 @@ import Foundation
 class Speciality : NSObject {
     var objectId : String?
     var name : String?
-    var minENTGrand : Int = 101
     var minENTProst : Int = 100
     var minENTAB : Int = 102
     var minENTAuto : Int = 100

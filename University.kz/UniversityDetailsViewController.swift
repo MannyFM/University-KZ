@@ -12,9 +12,18 @@ class UniversityDetailsViewController: UIViewController {
 
     @IBOutlet weak var descriptionTextView: UITextView!
     
+    weak var university : University!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if let desc = university.descript {
+            descriptionTextView.text = desc
+        }
+        
+        if let name = university.shortName {
+            navigationController?.title = name
+        }
         // Do any additional setup after loading the view.
     }
 

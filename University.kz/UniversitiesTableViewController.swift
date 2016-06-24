@@ -26,14 +26,18 @@ class UniversitiesTableViewController: UITableViewController {
         refreshControl = UIRefreshControl()
         refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl!.addTarget(self, action: #selector(CitiesTableViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        
         self.refresh(self)
         
-        self.saveTempUniversiy()
     }
     
     
     func refresh(sender: AnyObject) {
-        self.getAllUniversitiesAsync()
+        if (self.city.name == "All") {
+            self.getAllUniversitiesAsync()
+        } else {
+            self.getUniversitiesInAsync(self.city)
+        }
     }
 
     // MARK: - Table view data source
@@ -50,8 +54,14 @@ class UniversitiesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! UniversityTableViewCell
 
-        // Configure the cell...
-
+        let index = indexPath.row
+        if let url = universities[index].imageURL {
+            cell.imageView?.loadImageFromURLString(url, placeholderImage: UIImage(named: "placeholder_uni"), completion: nil)
+        } else {
+            cell.imageView?.image = UIImage(named: "placeholder_uni")
+        }
+        
+        cell.universityLabel?.text = universities[index].shortName ?? "Uni short name"
         return cell
     }
     
@@ -61,11 +71,10 @@ class UniversitiesTableViewController: UITableViewController {
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == segueIdentifier) {
-            let VC = segue.destinationViewController
-            let vc = segue.destinationViewController as! UniversityTabBarController
+            let tb = segue.destinationViewController as! UniversityTabBarController
+            let vc = tb.viewControllers?.first as! UniversityDetailsViewController
             let index = (sender as! NSIndexPath).row
             vc.university = universities[index]
         }
@@ -93,16 +102,28 @@ class UniversitiesTableViewController: UITableViewController {
         })
     }
     
-    func saveTempUniversiy() {
-        let university = University()
-        
+    func getUniversitiesInAsync(city : City) {
+        let whereClause = "city.name = \'\(city.name!)\'"
+        let dataQuery = BackendlessDataQuery()
+        dataQuery.whereClause = whereClause
         let dataStore = Backendless.sharedInstance().data.of(University.ofClass())
         
-        dataStore.save(university, response: { (result : AnyObject!) in
-            let obj = result as! University
-            print("object swas benn saved \(obj)")
-        }) { (fault : Fault!) in
-            print("Server error: \(fault)")
-        }
+        dataStore.find(dataQuery,
+            response: { (result: BackendlessCollection!) -> Void in
+                self.universities = []
+                let contacts = result.getCurrentPage()
+                for obj in contacts {
+                    let university = obj as! University
+                    self.universities.append(university)
+                }
+                print("universities downloaded")
+                self.tableView.reloadData()
+                self.refreshControl!.endRefreshing()
+            },
+            error: { (fault: Fault!) -> Void in
+                print("Server reported an error: \(fault)")
+        })
+        
     }
+
 }

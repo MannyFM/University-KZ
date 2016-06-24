@@ -58,20 +58,20 @@ class SpecialitiesTableViewController: UITableViewController {
         let spec = specialities[index]
         switch indexPath.row {
         case 0:
-            cell.textLabel?.text = "Минимальный балл ЕНТ для обладателей знака «Алтын белгі»"
+            cell.textLabel?.text = "Мин. ЕНТ для обладателей знака «Алтын белгі»"
             cell.detailTextLabel?.text = "\(spec.minENTAB)"
         case 1:
-            cell.textLabel?.text = "Минимальный балл ЕНТ для смертных"  //<<<<<<<<<<<==================================================================
+            cell.textLabel?.text = "Мин. ЕНТ для смертных"  //<<<<<<<<<<<==================================================================
             //Лица, не являющиеся обладателями преимущественного права
             cell.detailTextLabel?.text = "\(spec.minENTProst)"
         case 2:
-            cell.textLabel?.text = "Минимальный балл ЕНТ для выпускников автономных организаций образования"
+            cell.textLabel?.text = "Мин. ЕНТ для выпускников автономных организаций образования"
             cell.detailTextLabel?.text = "\(spec.minENTAuto)"
         case 3:
-            cell.textLabel?.text = "Минимальный балл ЕНТ для победителей международных, республиканских и президентских олимпиад, научных и спортивных соревнований"
+            cell.textLabel?.text = "Мин. ЕНТ для победителей международных, республиканских и президентских олимпиад, научных и спортивных соревнований"
             cell.detailTextLabel?.text = "\(spec.minENTWinner)"
         case 4:
-            cell.textLabel?.text = "Минимальный балл ЕНТ для обладателей сельской квоты"
+            cell.textLabel?.text = "Мин. ЕНТ для обладателей сельской квоты"
             cell.detailTextLabel?.text = "\(spec.minENTVillage)"
         case 5:
             cell.textLabel?.text = "ID специальности"
@@ -79,22 +79,24 @@ class SpecialitiesTableViewController: UITableViewController {
         default: break
             //
         }
-        
+        //cell.textLabel?.font = cell.textLabel?.font.fontWithSize(12)
         return cell
     }
     
     // MARK: Header
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Section \(section)"
-    }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let vw = UIView()
         vw.backgroundColor = UIColor.whiteColor()
         
+        let titleLabel = UILabel()
+        titleLabel.frame = CGRect(x: 8, y: 8, width: vw.frame.width, height: 44.0)
+        
         return vw
     }
-    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44.0
+    }
     // MARK: - Navigation
     
     func getSpecialitiesInAsync(university : University) {

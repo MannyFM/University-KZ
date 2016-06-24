@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zzb-oU-UOu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zzb-oU-UOu">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -47,12 +47,12 @@
                                             <exclude reference="FLG-cP-Mbi"/>
                                         </mask>
                                         <mask key="constraints">
+                                            <exclude reference="hMy-AZ-DWD"/>
+                                            <exclude reference="pFT-JK-sht"/>
                                             <exclude reference="IIX-2I-d6j"/>
                                             <exclude reference="XPC-0R-DVr"/>
                                             <exclude reference="bBu-b6-YB3"/>
                                             <exclude reference="mIa-Dr-Uhr"/>
-                                            <exclude reference="hMy-AZ-DWD"/>
-                                            <exclude reference="pFT-JK-sht"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
@@ -61,12 +61,12 @@
                                             <include reference="FLG-cP-Mbi"/>
                                         </mask>
                                         <mask key="constraints">
+                                            <include reference="hMy-AZ-DWD"/>
+                                            <include reference="pFT-JK-sht"/>
                                             <include reference="IIX-2I-d6j"/>
                                             <include reference="XPC-0R-DVr"/>
                                             <include reference="bBu-b6-YB3"/>
                                             <include reference="mIa-Dr-Uhr"/>
-                                            <include reference="hMy-AZ-DWD"/>
-                                            <include reference="pFT-JK-sht"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -136,12 +136,12 @@
                                             <exclude reference="Lbq-Iw-o3O"/>
                                         </mask>
                                         <mask key="constraints">
+                                            <exclude reference="8jV-fV-Z96"/>
+                                            <exclude reference="bxz-Ih-XNQ"/>
                                             <exclude reference="KJc-2X-JE7"/>
                                             <exclude reference="MvZ-pc-Bih"/>
                                             <exclude reference="bV2-Ff-2uU"/>
                                             <exclude reference="h3o-sK-vJ1"/>
-                                            <exclude reference="8jV-fV-Z96"/>
-                                            <exclude reference="bxz-Ih-XNQ"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
@@ -150,12 +150,12 @@
                                             <exclude reference="Lbq-Iw-o3O"/>
                                         </mask>
                                         <mask key="constraints">
+                                            <include reference="8jV-fV-Z96"/>
+                                            <include reference="bxz-Ih-XNQ"/>
                                             <include reference="KJc-2X-JE7"/>
                                             <include reference="MvZ-pc-Bih"/>
                                             <include reference="bV2-Ff-2uU"/>
                                             <include reference="h3o-sK-vJ1"/>
-                                            <include reference="8jV-fV-Z96"/>
-                                            <include reference="bxz-Ih-XNQ"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>

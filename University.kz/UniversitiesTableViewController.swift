@@ -21,6 +21,7 @@ class UniversitiesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        searchBar.delegate = self
         self.navigationItem.title = city.name
         
         refreshControl = UIRefreshControl()
@@ -116,7 +117,19 @@ class UniversitiesTableViewController: UITableViewController {
                 let contacts = result.getCurrentPage()
                 for obj in contacts {
                     let university = obj as! University
-                    self.universities.append(university)
+                    let text = self.searchBar.text!
+                    var x = ""
+                    if university.fullName != nil {
+                        x = university.fullName!
+                    }
+                    var y = ""
+                    if university.shortName != nil {
+                        y = university.shortName!
+                    }
+                    print("|\(text)| - \(x) = \(y)")
+                    if text.isEmpty || x.containsString(text) || y.containsString(text) {
+                        self.universities.append(university)
+                    }
                 }
                 print("universities downloaded")
                 self.tableView.reloadData()
@@ -125,7 +138,11 @@ class UniversitiesTableViewController: UITableViewController {
             error: { (fault: Fault!) -> Void in
                 print("Server reported an error: \(fault)")
         })
-        
     }
+}
 
+extension UniversitiesTableViewController: UISearchBarDelegate {
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        self.getUniversitiesInAsync(city)
+    }
 }

@@ -13,87 +13,96 @@ class UniversitiesTableViewController: UITableViewController {
     @IBOutlet weak var searchBar: UISearchBar!
 
     let cellIdentifier : String = "UniversityCell"
+    let segueIdentifier : String = "DetailsSegue"
+    
+    var city = City()
+    var universities = [University]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.title = city.name
+        
+        refreshControl = UIRefreshControl()
+        refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl!.addTarget(self, action: #selector(CitiesTableViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        self.refresh(self)
+        
+        self.saveTempUniversiy()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    func refresh(sender: AnyObject) {
+        self.getAllUniversitiesAsync()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return universities.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! UniversityTableViewCell
 
         // Configure the cell...
 
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier(segueIdentifier, sender: indexPath)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == segueIdentifier) {
+            let VC = segue.destinationViewController
+            let vc = segue.destinationViewController as! UniversityTabBarController
+            let index = (sender as! NSIndexPath).row
+            vc.university = universities[index]
+        }
     }
-    */
-
+    
+    //MARK: - Backendless
+    
+    func getAllUniversitiesAsync() {
+        let dataStore = Backendless.sharedInstance().data.of(University.ofClass())
+        
+        dataStore.find(
+            { (result: BackendlessCollection!) -> Void in
+                self.universities = []
+                let contacts = result.getCurrentPage()
+                for obj in contacts {
+                    let university = obj as! University
+                    self.universities.append(university)
+                }
+                print("universities downloaded")
+                self.tableView.reloadData()
+                self.refreshControl!.endRefreshing()
+            },
+            error: { (fault: Fault!) -> Void in
+                print("Server reported an error: \(fault)")
+        })
+    }
+    
+    func saveTempUniversiy() {
+        let university = University()
+        
+        let dataStore = Backendless.sharedInstance().data.of(University.ofClass())
+        
+        dataStore.save(university, response: { (result : AnyObject!) in
+            let obj = result as! University
+            print("object swas benn saved \(obj)")
+        }) { (fault : Fault!) in
+            print("Server error: \(fault)")
+        }
+    }
 }

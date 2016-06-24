@@ -23,7 +23,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="135"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wqo-ff-qqm">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wqo-ff-qqm">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euy-eC-Uwq">
@@ -34,12 +34,14 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="euy-eC-Uwq" firstAttribute="centerX" secondItem="awA-Oh-ADZ" secondAttribute="centerX" id="OLF-BM-sjT"/>
                                         <constraint firstItem="euy-eC-Uwq" firstAttribute="centerY" secondItem="Wqo-ff-qqm" secondAttribute="centerY" id="Tch-Sn-Sta"/>
                                         <constraint firstAttribute="bottom" secondItem="Wqo-ff-qqm" secondAttribute="bottom" id="UKp-CI-P8t"/>
                                         <constraint firstAttribute="trailing" secondItem="Wqo-ff-qqm" secondAttribute="trailing" id="XYO-D4-KYx"/>
                                         <constraint firstItem="Wqo-ff-qqm" firstAttribute="top" secondItem="awA-Oh-ADZ" secondAttribute="top" id="m7x-Tf-iMu"/>
                                         <constraint firstItem="euy-eC-Uwq" firstAttribute="centerX" secondItem="Wqo-ff-qqm" secondAttribute="centerX" id="pzt-kr-Ux4"/>
                                         <constraint firstItem="Wqo-ff-qqm" firstAttribute="leading" secondItem="awA-Oh-ADZ" secondAttribute="leading" id="uVO-g9-YFE"/>
+                                        <constraint firstItem="euy-eC-Uwq" firstAttribute="centerY" secondItem="awA-Oh-ADZ" secondAttribute="centerY" id="vmu-Fz-cbe"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="subviews">
@@ -47,8 +49,10 @@
                                             <exclude reference="euy-eC-Uwq"/>
                                         </mask>
                                         <mask key="constraints">
+                                            <exclude reference="OLF-BM-sjT"/>
                                             <exclude reference="Tch-Sn-Sta"/>
                                             <exclude reference="pzt-kr-Ux4"/>
+                                            <exclude reference="vmu-Fz-cbe"/>
                                             <exclude reference="UKp-CI-P8t"/>
                                             <exclude reference="XYO-D4-KYx"/>
                                             <exclude reference="m7x-Tf-iMu"/>
@@ -61,8 +65,10 @@
                                             <include reference="euy-eC-Uwq"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="Tch-Sn-Sta"/>
-                                            <include reference="pzt-kr-Ux4"/>
+                                            <include reference="OLF-BM-sjT"/>
+                                            <exclude reference="Tch-Sn-Sta"/>
+                                            <exclude reference="pzt-kr-Ux4"/>
+                                            <include reference="vmu-Fz-cbe"/>
                                             <include reference="UKp-CI-P8t"/>
                                             <include reference="XYO-D4-KYx"/>
                                             <include reference="m7x-Tf-iMu"/>
@@ -71,9 +77,8 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="cityImageView" destination="Wqo-ff-qqm" id="tZQ-lP-ezO"/>
-                                    <outlet property="cityName" destination="euy-eC-Uwq" id="EP9-ko-FjY"/>
-                                    <outlet property="cityNameLabel" destination="euy-eC-Uwq" id="uJi-1b-fhl"/>
+                                    <outlet property="cityImageView" destination="Wqo-ff-qqm" id="iEe-TA-x5V"/>
+                                    <outlet property="cityNameLabel" destination="euy-eC-Uwq" id="eA1-l8-Qfy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -106,7 +111,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UniversityCell" id="2gH-Rc-LZq">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UniversityCell" id="2gH-Rc-LZq" customClass="UniversityTableViewCell" customModule="University_kz" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="136" width="600" height="136"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2gH-Rc-LZq" id="Y9S-n3-fDP">
@@ -160,6 +165,10 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="universityImageView" destination="tBE-IX-yZj" id="SrV-YT-Rpt"/>
+                                    <outlet property="universityLabel" destination="Lbq-Iw-o3O" id="qiL-Aw-Bzi"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

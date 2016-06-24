@@ -1,17 +1,18 @@
 //
-//  CityTableViewCell.swift
+//  UniversityTableViewCell.swift
 //  University.kz
 //
-//  Created by Alibek Manabayev on 23.06.16.
+//  Created by Alibek Manabayev on 24.06.16.
 //  Copyright © 2016 Alibek Manabayev. All rights reserved.
 //
 
 import UIKit
 
-class CityTableViewCell: UITableViewCell {
+class UniversityTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var cityImageView: UIImageView!
-    @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var universityImageView: UIImageView!
+    @IBOutlet weak var universityLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

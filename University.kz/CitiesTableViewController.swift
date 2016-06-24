@@ -12,6 +12,7 @@ import KFSwiftImageLoader
 class CitiesTableViewController: UITableViewController {
 
     let cellIdentifier : String = "CityCell"
+    let segueIndentifier : String = "UniversitiesSegue"
     
     
     var cities = [City]()
@@ -19,9 +20,17 @@ class CitiesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        refreshControl = UIRefreshControl()
+        refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl!.addTarget(self, action: #selector(CitiesTableViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         self.getAllCitiesAsync()
     }
 
+    
+    func refresh(sender:AnyObject) {
+        self.getAllCitiesAsync()
+    }
     
     // MARK: - Table view data source
 
@@ -40,21 +49,32 @@ class CitiesTableViewController: UITableViewController {
 
         let index = indexPath.row
         
-        //put placeholder <------------------------------------------------------------------------------------------------------------------------------------------------->
-        cell.imageView?.loadImageFromURLString(cities[index].imageURL!, placeholderImage: nil, completion: nil)
+        cell.imageView!.contentMode = .ScaleAspectFit
+        if let url = cities[index].imageURL {
+            cell.imageView!.loadImageFromURLString(url, placeholderImage: UIImage(named: "placeholder_city"), completion: nil)
+        } else {
+            cell.imageView!.image = UIImage(named: "placeholder_city")
+        }
         
         cell.cityNameLabel.text = cities[index].name
+        cell.cityNameLabel.hidden = false
         
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier(segueIndentifier, sender: indexPath)
+    }
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == segueIndentifier) {
+            let vc = segue.destinationViewController as! UniversitiesTableViewController
+            let index = (sender as! NSIndexPath).row
+            vc.city = cities[index]
+        }
     }
     
     //MARK: - Backendless
@@ -64,6 +84,7 @@ class CitiesTableViewController: UITableViewController {
         
         dataStore.find(
             { (result: BackendlessCollection!) -> Void in
+                self.cities = []
                 let contacts = result.getCurrentPage()
                 for obj in contacts {
                     let city = obj as! City
@@ -71,6 +92,7 @@ class CitiesTableViewController: UITableViewController {
                 }
                 print("cities downloaded")
                 self.tableView.reloadData()
+                self.refreshControl!.endRefreshing()
             },
             error: { (fault: Fault!) -> Void in
                 print("Server reported an error: \(fault)")

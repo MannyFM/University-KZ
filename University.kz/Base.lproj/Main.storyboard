@@ -115,29 +115,18 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tBE-IX-yZj">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="University name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbq-Iw-o3O">
-                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Lbq-Iw-o3O" firstAttribute="centerY" secondItem="Y9S-n3-fDP" secondAttribute="centerY" id="8jV-fV-Z96"/>
                                         <constraint firstItem="tBE-IX-yZj" firstAttribute="top" secondItem="Y9S-n3-fDP" secondAttribute="topMargin" constant="-8" id="KJc-2X-JE7"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="tBE-IX-yZj" secondAttribute="trailing" constant="-8" id="MvZ-pc-Bih"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="tBE-IX-yZj" secondAttribute="bottom" constant="-8" id="bV2-Ff-2uU"/>
-                                        <constraint firstItem="Lbq-Iw-o3O" firstAttribute="centerX" secondItem="Y9S-n3-fDP" secondAttribute="centerX" id="bxz-Ih-XNQ"/>
                                         <constraint firstItem="tBE-IX-yZj" firstAttribute="leading" secondItem="Y9S-n3-fDP" secondAttribute="leadingMargin" constant="-8" id="h3o-sK-vJ1"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="subviews">
                                             <exclude reference="tBE-IX-yZj"/>
-                                            <exclude reference="Lbq-Iw-o3O"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="8jV-fV-Z96"/>
-                                            <exclude reference="bxz-Ih-XNQ"/>
                                             <exclude reference="KJc-2X-JE7"/>
                                             <exclude reference="MvZ-pc-Bih"/>
                                             <exclude reference="bV2-Ff-2uU"/>
@@ -147,11 +136,8 @@
                                     <variation key="widthClass=compact">
                                         <mask key="subviews">
                                             <include reference="tBE-IX-yZj"/>
-                                            <exclude reference="Lbq-Iw-o3O"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="8jV-fV-Z96"/>
-                                            <include reference="bxz-Ih-XNQ"/>
                                             <include reference="KJc-2X-JE7"/>
                                             <include reference="MvZ-pc-Bih"/>
                                             <include reference="bV2-Ff-2uU"/>
@@ -265,18 +251,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpecialityCell" textLabel="kVP-j0-d5F" rowHeight="60" style="IBUITableViewCellStyleDefault" id="pTl-X4-bAc" customClass="SpecialityTableViewCell" customModule="University_kz" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpecialityCell" textLabel="kVP-j0-d5F" detailTextLabel="oqf-k6-fiQ" rowHeight="60" style="IBUITableViewCellStyleValue1" id="pTl-X4-bAc" customClass="SpecialityTableViewCell" customModule="University_kz" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pTl-X4-bAc" id="Ggp-eO-2fN">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Speciality name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kVP-j0-d5F">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Speciality name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kVP-j0-d5F">
                                             <rect key="frame" x="15" y="0.0" width="570" height="59"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact">
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oqf-k6-fiQ">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact">
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>

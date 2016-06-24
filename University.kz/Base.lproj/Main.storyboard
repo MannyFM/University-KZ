@@ -112,23 +112,23 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="135"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tBE-IX-yZj">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tBE-IX-yZj">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="University name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbq-Iw-o3O">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="tBE-IX-yZj" secondAttribute="trailing" id="F9o-Jf-xN8"/>
-                                        <constraint firstItem="tBE-IX-yZj" firstAttribute="leading" secondItem="Y9S-n3-fDP" secondAttribute="leading" id="VJ3-MU-4Cu"/>
-                                        <constraint firstItem="tBE-IX-yZj" firstAttribute="top" secondItem="Y9S-n3-fDP" secondAttribute="top" id="gdf-vC-tfC"/>
-                                        <constraint firstItem="Lbq-Iw-o3O" firstAttribute="centerX" secondItem="tBE-IX-yZj" secondAttribute="centerX" id="p8F-kR-aJr"/>
-                                        <constraint firstAttribute="bottom" secondItem="tBE-IX-yZj" secondAttribute="bottom" id="usk-z9-zl2"/>
-                                        <constraint firstItem="Lbq-Iw-o3O" firstAttribute="centerY" secondItem="tBE-IX-yZj" secondAttribute="centerY" id="xxW-xE-qW7"/>
+                                        <constraint firstItem="Lbq-Iw-o3O" firstAttribute="centerY" secondItem="Y9S-n3-fDP" secondAttribute="centerY" id="8jV-fV-Z96"/>
+                                        <constraint firstItem="tBE-IX-yZj" firstAttribute="top" secondItem="Y9S-n3-fDP" secondAttribute="topMargin" constant="-8" id="KJc-2X-JE7"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="tBE-IX-yZj" secondAttribute="trailing" constant="-8" id="MvZ-pc-Bih"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="tBE-IX-yZj" secondAttribute="bottom" constant="-8" id="bV2-Ff-2uU"/>
+                                        <constraint firstItem="Lbq-Iw-o3O" firstAttribute="centerX" secondItem="Y9S-n3-fDP" secondAttribute="centerX" id="bxz-Ih-XNQ"/>
+                                        <constraint firstItem="tBE-IX-yZj" firstAttribute="leading" secondItem="Y9S-n3-fDP" secondAttribute="leadingMargin" constant="-8" id="h3o-sK-vJ1"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="subviews">
@@ -136,32 +136,31 @@
                                             <exclude reference="Lbq-Iw-o3O"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="p8F-kR-aJr"/>
-                                            <exclude reference="xxW-xE-qW7"/>
-                                            <exclude reference="F9o-Jf-xN8"/>
-                                            <exclude reference="VJ3-MU-4Cu"/>
-                                            <exclude reference="gdf-vC-tfC"/>
-                                            <exclude reference="usk-z9-zl2"/>
+                                            <exclude reference="KJc-2X-JE7"/>
+                                            <exclude reference="MvZ-pc-Bih"/>
+                                            <exclude reference="bV2-Ff-2uU"/>
+                                            <exclude reference="h3o-sK-vJ1"/>
+                                            <exclude reference="8jV-fV-Z96"/>
+                                            <exclude reference="bxz-Ih-XNQ"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
                                         <mask key="subviews">
                                             <include reference="tBE-IX-yZj"/>
-                                            <include reference="Lbq-Iw-o3O"/>
+                                            <exclude reference="Lbq-Iw-o3O"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="p8F-kR-aJr"/>
-                                            <include reference="xxW-xE-qW7"/>
-                                            <include reference="F9o-Jf-xN8"/>
-                                            <include reference="VJ3-MU-4Cu"/>
-                                            <include reference="gdf-vC-tfC"/>
-                                            <include reference="usk-z9-zl2"/>
+                                            <include reference="KJc-2X-JE7"/>
+                                            <include reference="MvZ-pc-Bih"/>
+                                            <include reference="bV2-Ff-2uU"/>
+                                            <include reference="h3o-sK-vJ1"/>
+                                            <include reference="8jV-fV-Z96"/>
+                                            <include reference="bxz-Ih-XNQ"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="universityImageView" destination="tBE-IX-yZj" id="SrV-YT-Rpt"/>
-                                    <outlet property="universityLabel" destination="Lbq-Iw-o3O" id="qiL-Aw-Bzi"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

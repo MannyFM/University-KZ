@@ -56,12 +56,12 @@ class UniversitiesTableViewController: UITableViewController {
 
         let index = indexPath.row
         if let url = universities[index].imageURL {
-            cell.imageView?.loadImageFromURLString(url, placeholderImage: UIImage(named: "placeholder_uni"), completion: nil)
+            cell.universityImageView.loadImageFromURLString(url, placeholderImage: UIImage(named: "placeholder_uni"), completion: nil)
         } else {
-            cell.imageView?.image = UIImage(named: "placeholder_uni")
+            cell.universityImageView.image = UIImage(named: "placeholder_uni")
         }
         
-        cell.universityLabel?.text = universities[index].shortName ?? "Uni short name"
+//        cell.universityLabel?.text = universities[index].shortName ?? "Uni short name"
         return cell
     }
     

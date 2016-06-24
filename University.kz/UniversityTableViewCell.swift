@@ -11,7 +11,6 @@ import UIKit
 class UniversityTableViewCell: UITableViewCell {
 
     @IBOutlet weak var universityImageView: UIImageView!
-    @IBOutlet weak var universityLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

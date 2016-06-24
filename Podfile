@@ -10,5 +10,6 @@ target 'University.kz' do
 	pod 'Backendless'
 	pod 'Alamofire', '~> 3.4'
 	pod 'SwiftyJSON'
+	pod 'DropDownTableView'
 
 end

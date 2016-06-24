@@ -1,0 +1,6 @@
+framework module DropDownTableView {
+  umbrella header "DropDownTableView-umbrella.h"
+
+  export *
+  module * { export * }
+}

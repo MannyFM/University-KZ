@@ -73,10 +73,12 @@ class UniversitiesTableViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == segueIdentifier) {
+            let index = (sender as! NSIndexPath).row
             let tb = segue.destinationViewController as! UniversityTabBarController
             let vc = tb.viewControllers?.first as! UniversityDetailsViewController
-            let index = (sender as! NSIndexPath).row
             vc.university = universities[index]
+            let svc = tb.viewControllers?.last as! SpecialitiesTableViewController
+            svc.university = universities[index]
         }
     }
     

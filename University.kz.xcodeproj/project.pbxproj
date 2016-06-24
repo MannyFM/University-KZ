@@ -20,6 +20,7 @@
 		3F50A0BE1D1BE3F100D116FA /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F50A0BD1D1BE3F100D116FA /* CityTableViewCell.swift */; };
 		3F8466501D1CF10500A35B60 /* UniversityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F84664F1D1CF10500A35B60 /* UniversityTableViewCell.swift */; };
 		3F8466521D1CF21800A35B60 /* UniversityTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8466511D1CF21800A35B60 /* UniversityTabBarController.swift */; };
+		3F8466541D1D1B5900A35B60 /* SpecialityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8466531D1D1B5900A35B60 /* SpecialityTableViewCell.swift */; };
 		3F852F341D1BCF0E007F19E4 /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F852F331D1BCF0E007F19E4 /* CitiesTableViewController.swift */; };
 		3F852F361D1BCF1F007F19E4 /* UniversitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F852F351D1BCF1F007F19E4 /* UniversitiesTableViewController.swift */; };
 		4DDBDFCC79BD18925D532DE4 /* Pods_University_kz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA788B2F71C1AA1533D6AF6A /* Pods_University_kz.framework */; };
@@ -41,6 +42,7 @@
 		3F50A0BD1D1BE3F100D116FA /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		3F84664F1D1CF10500A35B60 /* UniversityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityTableViewCell.swift; sourceTree = "<group>"; };
 		3F8466511D1CF21800A35B60 /* UniversityTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityTabBarController.swift; sourceTree = "<group>"; };
+		3F8466531D1D1B5900A35B60 /* SpecialityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialityTableViewCell.swift; sourceTree = "<group>"; };
 		3F852F331D1BCF0E007F19E4 /* CitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesTableViewController.swift; sourceTree = "<group>"; };
 		3F852F351D1BCF1F007F19E4 /* UniversitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesTableViewController.swift; sourceTree = "<group>"; };
 		67837FE6B141A35A8DBF7E42 /* Pods-University.kz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-University.kz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-University.kz/Pods-University.kz.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				3F50A0BD1D1BE3F100D116FA /* CityTableViewCell.swift */,
 				3F84664F1D1CF10500A35B60 /* UniversityTableViewCell.swift */,
+				3F8466531D1D1B5900A35B60 /* SpecialityTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				3F8466521D1CF21800A35B60 /* UniversityTabBarController.swift in Sources */,
 				3F50A0BE1D1BE3F100D116FA /* CityTableViewCell.swift in Sources */,
 				3F852F341D1BCF0E007F19E4 /* CitiesTableViewController.swift in Sources */,
+				3F8466541D1D1B5900A35B60 /* SpecialityTableViewCell.swift in Sources */,
 				3F2B86A01D1BC32A007AFFF3 /* AppDelegate.swift in Sources */,
 				3F50A0B61D1BD89800D116FA /* SpecialityDetailsViewController.swift in Sources */,
 				3F8466501D1CF10500A35B60 /* UniversityTableViewCell.swift in Sources */,
